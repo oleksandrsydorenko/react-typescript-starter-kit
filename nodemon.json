@@ -1,0 +1,6 @@
+{
+  "watch": [".env", "babel.config.js", "config/webpack", "postcss.config.js", "tsconfig.json"],
+  "events": {
+    "restart": "yarn clear:cache"
+  }
+}

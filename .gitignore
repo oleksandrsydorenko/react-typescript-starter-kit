@@ -1,0 +1,27 @@
+########
+# IDE #
+######
+.idea
+.vscode
+
+#########
+# Misc #
+#######
+*.log
+.cache
+
+#######
+# OS #
+#####
+.DS_Store
+.Trashes
+Thumbs.db
+
+############
+# Project #
+##########
+.env
+build
+coverage
+declarations/generated
+node_modules
