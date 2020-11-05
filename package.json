@@ -1,7 +1,17 @@
 {
   "name": "react-happy-kit",
   "version": "1.0.0",
+  "description": "React-Typescript Starter Kit",
+  "author": "Oleksandr Sydorenko (https://www.linkedin.com/in/oleksandrsydorenko)",
   "license": "MIT",
+  "homepage": "https://github.com/oleksandrsydorenko/react-typescript-starter-kit#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oleksandrsydorenko/react-typescript-starter-kit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/oleksandrsydorenko/react-typescript-starter-kit/issues"
+  },
   "scripts": {
     "build": "yarn clear:cache && cross-env NODE_ENV=production webpack --config ./config/webpack/webpack.config.js",
     "build:stats": "cross-env STATS_PRESET=verbose yarn build --progress --profile",
