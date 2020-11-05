@@ -30,8 +30,8 @@ module.exports = {
     '@babel/plugin-proposal-nullish-coalescing-operator',
     // transpiles optional chaining operators into a series of nil checks
     '@babel/plugin-proposal-optional-chaining',
-    // speeds up non-generator transformation for async/await
-    'module:fast-async',
+    // enables the re-use of Babel's of helpers
+    '@babel/plugin-transform-runtime',
   ],
   env: {
     development: {
