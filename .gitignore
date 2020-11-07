@@ -25,3 +25,5 @@ build
 coverage
 declarations/generated
 node_modules
+package-lock.json
+yarn.lock
