@@ -7,6 +7,8 @@ module.exports = {
         // disables transformation of ECMAScript import/export to CommonJS require/module.exports
         // Webpack tree shaking requires this option
         modules: false,
+        // allows to use some ECMAScript feature proposals
+        shippedProposals: true,
       },
     ],
     // allows to use TypeScript features
@@ -16,10 +18,6 @@ module.exports = {
     '@babel/preset-react',
   ],
   plugins: [
-    // transpiles class properties
-    '@babel/proposal-class-properties',
-    // transpiles object rest and spread operators
-    '@babel/proposal-object-rest-spread',
     // transpiles export default
     '@babel/plugin-proposal-export-default-from',
     // transpiles export namespace
