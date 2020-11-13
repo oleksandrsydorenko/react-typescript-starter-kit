@@ -6,9 +6,9 @@ module.exports = {
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'mjs'],
   // defines aliases (same as Webpack aliases)
   moduleNameMapper: {
-    '^Assets(.*)$': '<rootDir>/src/assets$1',
-    '^Components(.*)$': '<rootDir>/src/components$1',
     '^~(.*)$': '<rootDir>/src$1',
+    '^assets(.*)$': '<rootDir>/src/assets$1',
+    '^components(.*)$': '<rootDir>/src/components$1',
   },
   // defines paths to search for test files
   roots: ['<rootDir>/src'],

@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { ReactComponent as LogoIcon } from 'Assets/logo.svg';
+import { ReactComponent as LogoIcon } from 'assets/logo.svg';
 import styles from './Header.module.scss';
 
 const Header: FC = () => (
