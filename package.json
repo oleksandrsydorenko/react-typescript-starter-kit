@@ -38,6 +38,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
+    "@babel/eslint-parser": "^7.12.1",
     "@babel/plugin-proposal-export-default-from": "^7.12.1",
     "@babel/plugin-proposal-export-namespace-from": "^7.12.1",
     "@babel/plugin-proposal-logical-assignment-operators": "^7.12.1",
@@ -58,9 +59,7 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@typescript-eslint/eslint-plugin": "^4.9.1",
-    "@typescript-eslint/parser": "^4.9.1",
     "autoprefixer": "^10.1.0",
-    "babel-eslint": "^10.1.0",
     "babel-jest": "^26.6.3",
     "babel-loader": "^8.2.2",
     "babel-plugin-react-remove-properties": "^0.3.0",

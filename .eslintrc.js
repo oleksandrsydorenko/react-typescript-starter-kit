@@ -2,13 +2,11 @@ const getPresets = isTypeScript =>
   [
     ...(isTypeScript
       ? [
-          // rules for TypeScript that require type-checking
-          'plugin:@typescript-eslint/recommended-requiring-type-checking',
-          // Airbnb's rules for TypeScript
+          // Airbnb rules for TypeScript
           'airbnb-typescript',
         ]
       : [
-          // Airbnb's rules for JavaScript
+          // Airbnb rules for JavaScript
           'airbnb',
         ]),
     // Airbnb's rules for React hooks
@@ -49,17 +47,7 @@ module.exports = {
     worker: true,
   },
   extends: getPresets(),
-  parser: 'babel-eslint',
-  parserOptions: {
-    ecmaFeatures: {
-      // enables global strict mode
-      impliedStrict: true,
-      // enables JSX markup
-      jsx: true,
-    },
-    // enables ECMAScript modules
-    sourceType: 'module',
-  },
+  parser: '@babel/eslint-parser',
   rules: {
     // forbids external modules import that are not declared in the package.json dependencies section
     'import/no-extraneous-dependencies': [
@@ -73,16 +61,8 @@ module.exports = {
     {
       extends: getPresets(true),
       files: ['*.ts', '*.tsx'],
-      parser: '@typescript-eslint/parser',
       parserOptions: {
-        ecmaFeatures: {
-          // enables JSX markup
-          jsx: true,
-        },
-        // path to TypeScript config
-        project: 'tsconfig.json',
-        // path to TypeScript config directory
-        tsconfigRootDir: __dirname,
+        project: './tsconfig.json',
       },
       rules: {
         // restricts file extensions that may contain JSX markup
