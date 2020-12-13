@@ -58,13 +58,13 @@ Using yarn:
 
 `yarn build`
 
-Deploy `build` folder contents to your server/host.
+Deploy `dist` folder contents to your server/host.
 
 ## Scripts
 
 `build` - runs Webpack in production mode\
 `build:stats` - runs Webpack in production mode and generates profiles and statistics about modules\
-`clear` - removes _./build_ and _./node_modules_ directories\
+`clear` - removes _./dist_ and _./node_modules_ directories\
 `clear:cache` - removes _./node_modules/.cache_ directory\
 `lint` - runs ESlint, Prettier and Stylelint in parallel\
 `lint:eslint` - runs ESlint linter\

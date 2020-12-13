@@ -24,7 +24,7 @@ module.exports = ({ sourceMapsType, stats } = {}) => ({
     crossOriginLoading: 'anonymous',
     // generates bundle with file name by template
     filename: 'js/[name].[contenthash:5].js',
-    path: paths.build,
+    path: paths.dist,
   },
   resolve: {
     // defines aliases to import/require modules

@@ -5,7 +5,7 @@
   "scripts": {
     "build": "yarn clear:cache && cross-env NODE_ENV=production webpack --config ./config/webpack/webpack.config.js",
     "build:stats": "cross-env STATS_PRESET=verbose yarn build --progress --profile",
-    "clear": "rimraf ./build ./node_modules",
+    "clear": "rimraf ./dist ./node_modules",
     "clear:cache": "rimraf ./node_modules/.cache",
     "lint": "yarn lint:eslint & yarn lint:prettier & yarn lint:stylelint",
     "lint:eslint": "eslint --fix \"**/*.{j,t}s{,x}\"",

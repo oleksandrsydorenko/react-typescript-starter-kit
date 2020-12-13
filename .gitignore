@@ -21,9 +21,9 @@ Thumbs.db
 # Project #
 ##########
 .env
-build
 coverage
 declarations/generated
+dist
 node_modules
 package-lock.json
 yarn.lock
