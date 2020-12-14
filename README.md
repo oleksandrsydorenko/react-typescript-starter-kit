@@ -6,21 +6,18 @@ Starter kit for [React](https://reactjs.org/) web applications build on [Webpack
 
 ## Features
 
-- Supporting the latest [EcmaScript](https://ecma-international.org/) features and feature proposals such as [BigInt](https://github.com/tc39/proposal-bigint#readme), [Export Default From](https://github.com/tc39/proposal-export-default-from#readme), [Export Namespace From](https://github.com/tc39/proposal-export-ns-from#readme), [Logical Assignment](https://github.com/tc39/proposal-logical-assignment#readme), [Nullish Coalescing](https://github.com/tc39/proposal-nullish-coalescing#readme) and [Optional Chaining](https://github.com/tc39/proposal-optional-chaining#readme).
-- Transpiling TypeScript through [Babel](https://babeljs.io/) with [@babel/preset-typescript](https://babeljs.io/docs/en/babel-preset-typescript) and type checking in development mode with [Fork TS Checker Webpack Plugin](https://github.com/TypeStrong/fork-ts-checker-webpack-plugin#readme).
-- Autoprefixing CSS with [Autoprefixer](https://github.com/postcss/autoprefixer#readme), removing unused CSS with [PurgeCSS](https://github.com/FullHuman/purgecss#readme) and optimizing/minifying CSS with [Optimize CSS Assets Webpack Plugin](https://github.com/NMFR/optimize-css-assets-webpack-plugin#readme).
+- Supporting the latest [EcmaScript](https://ecma-international.org/) features and feature proposals.
+- Transpiling TypeScript through [Babel](https://babeljs.io/), type checking with [Fork TS Checker Webpack Plugin](https://github.com/TypeStrong/fork-ts-checker-webpack-plugin#readme).
+- Autoprefixing CSS with [Autoprefixer](https://github.com/postcss/autoprefixer#readme), removing unused CSS with [PurgeCSS](https://github.com/FullHuman/purgecss#readme), optimizing/minifying CSS with [Optimize CSS Assets Webpack Plugin](https://github.com/NMFR/optimize-css-assets-webpack-plugin#readme).
 - Targeting browsers with [Browserslist](https://github.com/browserslist/browserslist#readme).
-- Splitting code by splitting out common modules and each NPM package separately for better caching.
+- Optimized code splitting for better caching by splitting out common modules and each NPM package separately.
 - Verifying fetched resources using [Subresource Integrity (SRI)](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity) with [Webpack Subresource Integrity Plugin](https://github.com/waysact/webpack-subresource-integrity#readme).
-- Linting and formatting React/JavaScript/TypeScript with [ESlint](https://eslint.org/) and Airbnb's configs [eslint-config-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb#readme), [eslint-config-airbnb-typescript](https://github.com/iamturns/eslint-config-airbnb-typescript#readme), [Prettier](https://prettier.io/), [Lint-Staged](https://github.com/okonet/lint-staged#readme) and running linter and formatter on Git `pre-commit` hook with [Husky](https://github.com/typicode/husky#readme).
-- Linting and formatting CSS/Sass with [Stylelint](https://stylelint.io/), [Prettier](https://prettier.io/) and [Lint-Staged](https://github.com/okonet/lint-staged#readme) and running linter and formatter on Git `pre-commit` hook with [Husky](https://github.com/typicode/husky#readme).
-- Linting commit messages in accordance to [Conventional Commits Specification](https://www.conventionalcommits.org/en/v1.0.0/) with [commitlint](https://github.com/conventional-changelog/commitlint#readme) and running linter on Git `commit-msg` hook with [Husky](https://github.com/typicode/husky#readme).
-- Compressing files using [Brotli](https://github.com/google/brotli#readme) algorithm with [Compression Webpack Plugin](https://github.com/webpack-contrib/compression-webpack-plugin#readme).
-- Optimizing/minifying `GIF/JPEG/JPG/PNG/WEBP` files with [Image Webpack Loader](https://github.com/tcoopman/image-webpack-loader#readme).
-- Optimizing/minifying `SVG` files with [SVGO Loader](https://github.com/rpominov/svgo-loader#readme).
-- Testing with [Jest](https://jestjs.io/) and running tests on Git `pre-commit` hook with [Husky](https://github.com/typicode/husky#readme).
-- Restarting application on changes in compilation setting with [Nodemon](https://github.com/remy/nodemon#readme).
-- Versioning and generating CHANGELOG with [Standard Version](https://github.com/conventional-changelog/standard-version#readme).
+- Linting and formatting React/JavaScript/TypeScript/CSS/Sass with [ESlint](https://eslint.org/), [Stylelint](https://stylelint.io/), [Prettier](https://prettier.io/), [Lint-Staged](https://github.com/okonet/lint-staged#readme) and [Husky](https://github.com/typicode/husky#readme).
+- Linting commit messages in accordance to [Conventional Commits Specification](https://www.conventionalcommits.org/en/v1.0.0/) with [commitlint](https://github.com/conventional-changelog/commitlint#readme) and [Husky](https://github.com/typicode/husky#readme).
+- Compressing files using [Brotli](https://github.com/google/brotli#readme) algorithm.
+- Optimizing/minifying `GIF/JPEG/JPG/PNG/WEBP/SVG` files with [Image Webpack Loader](https://github.com/tcoopman/image-webpack-loader#readme) and [SVGO Loader](https://github.com/rpominov/svgo-loader#readme).
+- Testing with [Jest](https://jestjs.io/).
+- Versioning and generating CHANGELOG file with [Standard Version](https://github.com/conventional-changelog/standard-version#readme).
 
 ## Installation
 
