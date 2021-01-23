@@ -1,13 +1,14 @@
 {
   "events": {
-    "restart": "yarn clear:cache"
+    "restart": "yarn clear:cache",
+    "start": "yarn clear:cache"
   },
+  "exec": "webpack serve --config ./config/webpack/webpack.config.js",
   "watch": [
     ".browserslistrc",
     ".env",
     "babel.config.js",
     "config/webpack",
-    "package.json",
     "postcss.config.js",
     "tsconfig.json"
   ]

@@ -14,7 +14,7 @@
     "lint:stylelint": "stylelint --fix \"src/**/*.{c,sa,sc}ss\"",
     "postinstall": "yarn clear:cache",
     "release": "standard-version",
-    "start": "yarn clear:cache && cross-env NODE_ENV=development nodemon -x \"webpack serve --config ./config/webpack/webpack.config.js\"",
+    "start": "cross-env NODE_ENV=development nodemon",
     "test:coverage": "jest --coverage",
     "test:debug": "jest --inspect-brk --runInBand",
     "test:silent": "jest --silent --passWithNoTests",
