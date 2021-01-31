@@ -30,7 +30,7 @@ module.exports = {
     '@babel/plugin-proposal-optional-chaining',
     // transpiles BigInt values
     '@babel/plugin-syntax-bigint',
-    // enables the re-using of Babel's of helpers
+    // enables re-using of Babel's helpers
     '@babel/plugin-transform-runtime',
   ],
   env: {

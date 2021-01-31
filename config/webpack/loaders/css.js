@@ -4,10 +4,16 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const { paths } = require('../constants');
 
-const generateIdentifier = isMasked => (context, localIdentName, localName, options) => {
+const generateIdentifier = isMasked => (
+  context,
+  localIdentName,
+  localName,
+  options,
+) => {
   if (/module\.(css|s[ac]ss)$/g.test(context.resourcePath)) {
     const hash = loaderUtils.getHashDigest(
-      path.posix.relative(context.rootContext, context.resourcePath) + localName,
+      path.posix.relative(context.rootContext, context.resourcePath) +
+        localName,
       'md5',
       'base64',
       5,
@@ -37,7 +43,11 @@ const generateIdentifier = isMasked => (context, localIdentName, localName, opti
  * @param {boolean} [props.isMasked] - Identifiers mask enabled flag
  * @return {Object} CSS loaders config
  */
-module.exports = ({ baseLoader = MiniCssExtractPlugin.loader, isCached, isMasked = true } = {}) => {
+module.exports = ({
+  baseLoader = MiniCssExtractPlugin.loader,
+  isCached,
+  isMasked = true,
+} = {}) => {
   const regex = {
     css: /\.css$/,
     cssModule: /\.module\.css$/,

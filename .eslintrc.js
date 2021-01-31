@@ -11,16 +11,15 @@ const getPresets = isTypeScript =>
         ]),
     // Airbnb's rules for React hooks
     'airbnb/hooks',
+    // rules for Promises
+    'plugin:promise/recommended',
+    'prettier',
     // rules for Jest
     'plugin:jest/recommended',
     // extended rules for Jest
     'plugin:jest/style',
-    // extends eslint-config-prettier and allows to run Prettier rules as the Eslint ones
-    'plugin:prettier/recommended',
-    // rules for Promises
-    'plugin:promise/recommended',
     // disables ESLint rules that can conflict with Prettier
-    'prettier',
+    'plugin:prettier/recommended',
     // disables @typescript-eslint rules that can conflict with Prettier
     isTypeScript && 'prettier/@typescript-eslint',
     // disables babel-eslint rules that can conflict with Prettier

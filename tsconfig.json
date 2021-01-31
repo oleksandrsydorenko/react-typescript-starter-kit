@@ -5,11 +5,13 @@
     "baseUrl": "./src",
     "esModuleInterop": true,
     "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
     "jsx": "preserve",
     "lib": ["dom", "dom.iterable", "esnext", "webworker"],
     "module": "esnext",
     "moduleResolution": "node",
     "noImplicitAny": true,
+    "pretty": true,
     "removeComments": true,
     "strict": true,
     "target": "es6"

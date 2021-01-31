@@ -14,7 +14,8 @@ module.exports = ({ sourceMapsType, stats } = {}) => ({
   entry: {
     main: paths.entry,
   },
-  devtool: SOURCE_MAPS_ENABLED === 'true' ? 'source-map' : sourceMapsType || false,
+  devtool:
+    SOURCE_MAPS_ENABLED === 'true' ? 'source-map' : sourceMapsType || false,
   mode: NODE_ENV,
   output: {
     // generates chunk with file names by template

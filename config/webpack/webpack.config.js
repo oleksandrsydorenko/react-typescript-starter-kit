@@ -5,7 +5,11 @@ const parts = require('./parts');
 const plugins = require('./plugins');
 
 const { NODE_ENV, STATS_PRESET } = process.env;
-const defaultConfig = merge(loaders.fonts(), plugins.DefinePlugin(), plugins.ForkTsCheckerPlugin());
+const defaultConfig = merge(
+  loaders.fonts(),
+  plugins.DefinePlugin(),
+  plugins.ForkTsCheckerPlugin(),
+);
 
 const getDevelopmentConfig = () =>
   merge(
@@ -57,4 +61,7 @@ const getProductionConfig = () =>
   );
 
 module.exports = () =>
-  merge(defaultConfig, (NODE_ENV === 'production' ? getProductionConfig : getDevelopmentConfig)());
+  merge(
+    defaultConfig,
+    (NODE_ENV === 'production' ? getProductionConfig : getDevelopmentConfig)(),
+  );

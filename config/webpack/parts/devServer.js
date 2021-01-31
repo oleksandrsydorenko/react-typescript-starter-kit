@@ -12,7 +12,8 @@ const DEV_SERVER_PROTOCOL = 'http';
  */
 module.exports = () => ({
   devServer: {
-    after: () => opn(`${DEV_SERVER_PROTOCOL}://${DEV_SERVER_HOST}:${DEV_SERVER_PORT}`),
+    after: () =>
+      opn(`${DEV_SERVER_PROTOCOL}://${DEV_SERVER_HOST}:${DEV_SERVER_PORT}`),
     compress: true,
     contentBase: paths.public,
     historyApiFallback: true,

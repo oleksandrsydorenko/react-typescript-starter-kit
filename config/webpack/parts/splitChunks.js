@@ -30,7 +30,9 @@ module.exports = () => ({
           priority: 2,
           // bundles vendors modules in separate chunks
           name: module => {
-            const moduleName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
+            const moduleName = module.context.match(
+              /[\\/]node_modules[\\/](.*?)([\\/]|$)/,
+            )[1];
 
             // solves .NET servers issue with '@' in module name
             return `vendor${DELIMITER}${moduleName.replace('@', '')}`;
