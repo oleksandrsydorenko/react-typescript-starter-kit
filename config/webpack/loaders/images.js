@@ -35,7 +35,7 @@ module.exports = (isOptimized = true) => ({
               outputPath: 'svg',
             },
           },
-          isOptimized && 'svgo-loader',
+          isOptimized && 'image-webpack-loader',
         ].filter(Boolean),
       },
     ],
