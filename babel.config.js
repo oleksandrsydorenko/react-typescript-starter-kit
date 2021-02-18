@@ -18,24 +18,24 @@ module.exports = {
     '@babel/preset-react',
   ],
   plugins: [
-    // transpiles export default
+    // compiles export default
     '@babel/plugin-proposal-export-default-from',
-    // transpiles export namespace
+    // compiles export namespace
     '@babel/plugin-proposal-export-namespace-from',
-    // transpiles logical assignment operators
+    // compiles logical assignment operators
     '@babel/plugin-proposal-logical-assignment-operators',
-    // transpiles nullish coalescing operator
+    // compiles nullish coalescing operator
     '@babel/plugin-proposal-nullish-coalescing-operator',
-    // transpiles optional chaining operators into a series of nil checks
+    // compiles optional chaining operators into a series of nil checks
     '@babel/plugin-proposal-optional-chaining',
-    // transpiles BigInt values
+    // compiles BigInt values
     '@babel/plugin-syntax-bigint',
-    // enables re-using of Babel's helpers
+    // enables reusing of Babel's helpers to save on code size
     '@babel/plugin-transform-runtime',
   ],
   env: {
     development: {
-      // disables omitting newlines and whitespace
+      // disables omitting newlines and whitespace while compiling code
       compact: false,
     },
     production: {
