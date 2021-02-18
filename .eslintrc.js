@@ -9,7 +9,7 @@ const getPresets = isTypeScript =>
           // Airbnb rules for JavaScript
           'airbnb',
         ]),
-    // Airbnb's rules for React hooks
+    // Airbnb rules for React hooks
     'airbnb/hooks',
     // rules for Promises
     'plugin:promise/recommended',
@@ -51,7 +51,7 @@ module.exports = {
     // forbids external modules import that are not declared in the package.json dependencies section
     'import/no-extraneous-dependencies': [
       'error',
-      { devDependencies: ['config/**/*.[jt]s', '*.config.js'] },
+      { devDependencies: ['config/**/*.js', '*.config.js'] },
     ],
     // restricts file extensions that may contain JSX markup
     'react/jsx-filename-extension': ['error', { extensions: ['jsx'] }],

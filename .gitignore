@@ -22,7 +22,6 @@ Thumbs.db
 ##########
 .env
 coverage
-declarations/generated
 dist
 node_modules
 package-lock.json

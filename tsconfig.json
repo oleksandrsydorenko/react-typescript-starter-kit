@@ -1,7 +1,5 @@
 {
   "compilerOptions": {
-    "alwaysStrict": true,
-    "allowSyntheticDefaultImports": true,
     "baseUrl": "./src",
     "esModuleInterop": true,
     "experimentalDecorators": true,
@@ -10,7 +8,6 @@
     "lib": ["dom", "dom.iterable", "esnext", "webworker"],
     "module": "esnext",
     "moduleResolution": "node",
-    "noImplicitAny": true,
     "pretty": true,
     "removeComments": true,
     "strict": true,
