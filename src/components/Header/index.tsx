@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
-import { ReactComponent as LogoIcon } from 'assets/logo.svg';
+import logoSrc from 'assets/logo.svg';
 import styles from './Header.module.scss';
 
 const Header: FC = () => (
   <header className={styles.header}>
-    <LogoIcon className={styles.header__logo} />
+    <img className={styles.header__logo} src={logoSrc} alt="Logo" />
     <div className={styles.header__info}>
       <h1 className={styles.header__title}>React-TypeScript Starter Kit</h1>
       <p className={styles.header__description}>

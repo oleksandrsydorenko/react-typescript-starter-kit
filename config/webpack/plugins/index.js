@@ -5,6 +5,7 @@ const CopyPlugin = require('./CopyPlugin');
 const DefinePlugin = require('./DefinePlugin');
 const ForkTsCheckerPlugin = require('./ForkTsCheckerPlugin');
 const HtmlPlugin = require('./HtmlPlugin');
+const ImageMinimizerPlugin = require('./ImageMinimizerPlugin');
 const MiniCssExtractPlugin = require('./MiniCssExtractPlugin');
 const OptimizeCssAssetsPlugin = require('./OptimizeCssAssetsPlugin');
 const SubresourceIntegrityPlugin = require('./SubresourceIntegrityPlugin');
@@ -17,6 +18,7 @@ module.exports = {
   DefinePlugin,
   ForkTsCheckerPlugin,
   HtmlPlugin,
+  ImageMinimizerPlugin,
   MiniCssExtractPlugin,
   OptimizeCssAssetsPlugin,
   SubresourceIntegrityPlugin,

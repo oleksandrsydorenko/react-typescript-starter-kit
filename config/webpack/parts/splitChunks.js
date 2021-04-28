@@ -1,4 +1,4 @@
-const DELIMITER = '__';
+const FILENAME_DELIMITER = '__';
 
 /**
  * Setup split chunks
@@ -8,11 +8,11 @@ module.exports = () => ({
   // splits chunks to runtime, commons and vendors
   optimization: {
     runtimeChunk: {
-      name: ({ name }) => `runtime${DELIMITER}${name}`,
+      name: ({ name }) => `runtime${FILENAME_DELIMITER}${name}`,
     },
     moduleIds: 'deterministic',
     splitChunks: {
-      automaticNameDelimiter: DELIMITER,
+      automaticNameDelimiter: FILENAME_DELIMITER,
       cacheGroups: {
         common: {
           // separates async and sync chunks
@@ -35,7 +35,7 @@ module.exports = () => ({
             )[1];
 
             // solves .NET servers issue with '@' in module name
-            return `vendor${DELIMITER}${moduleName.replace('@', '')}`;
+            return `vendor${FILENAME_DELIMITER}${moduleName.replace('@', '')}`;
           },
         },
       },

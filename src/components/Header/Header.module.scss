@@ -9,6 +9,7 @@
 
 .header__logo {
   height: 30vmin;
+  animation: rotation 14s infinite linear;
 }
 
 .header__info {
@@ -22,4 +23,13 @@
 
 .header__description {
   font-size: 2.5vmin;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
 }

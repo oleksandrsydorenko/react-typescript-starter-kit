@@ -6,7 +6,7 @@ const plugins = require('./plugins');
 
 const { NODE_ENV, STATS_PRESET } = process.env;
 const defaultConfig = merge(
-  loaders.fonts(),
+  loaders.assets(),
   plugins.DefinePlugin(),
   plugins.ForkTsCheckerPlugin(),
 );
@@ -21,7 +21,6 @@ const getDevelopmentConfig = () =>
       // generates non masked identifiers
       isMasked: false,
     }),
-    loaders.images(false),
     loaders.js({
       // enables caching
       isCached: true,
@@ -46,7 +45,6 @@ const getDevelopmentConfig = () =>
 const getProductionConfig = () =>
   merge(
     loaders.css(),
-    loaders.images(),
     loaders.js(),
     parts.general(),
     parts.splitChunks(),
@@ -55,6 +53,7 @@ const getProductionConfig = () =>
     plugins.CompressionPlugin(),
     plugins.CopyPlugin(),
     plugins.HtmlPlugin(),
+    plugins.ImageMinimizerPlugin(),
     plugins.MiniCssExtractPlugin(),
     plugins.OptimizeCssAssetsPlugin(),
     plugins.SubresourceIntegrityPlugin(),
