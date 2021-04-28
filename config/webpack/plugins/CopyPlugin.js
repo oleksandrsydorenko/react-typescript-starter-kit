@@ -14,7 +14,7 @@ module.exports = () => ({
       patterns: [
         {
           from: paths.public,
-          filter: async resourcePath => !/index\.html/.test(resourcePath),
+          filter: resourcePath => !/index\.html/.test(resourcePath),
         },
       ],
     }),

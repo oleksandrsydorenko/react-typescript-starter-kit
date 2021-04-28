@@ -4,6 +4,8 @@
 
 Starter kit for [React](https://reactjs.org/) web applications build on [Webpack 5](https://webpack.js.org/), [Babel](https://babeljs.io/), [TypeScript](https://www.typescriptlang.org/), [Sass](https://sass-lang.com/) stack with preconfigured [ESlint](https://eslint.org/), [Prettier](https://prettier.io/), [Stylelint](https://stylelint.io/), [Lint-Staged](https://github.com/okonet/lint-staged), [Commitlint](https://github.com/conventional-changelog/commitlint), [Husky](https://github.com/typicode/husky) and [Jest](https://jestjs.io/).
 
+![React-TypeScript Starter Kit](logo.png 'React-TypeScript Starter Kit')
+
 ## Features
 
 - Supporting the latest [EcmaScript](https://ecma-international.org/) features and feature proposals.

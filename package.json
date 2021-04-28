@@ -1,7 +1,7 @@
 {
   "name": "react-typescript-starter-kit",
   "version": "1.0.0",
-  "description": "React-Typescript Starter Kit",
+  "description": "React-TypeScript Starter Kit",
   "main": "./src/index.tsx",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --config config/webpack/webpack.config.js",
