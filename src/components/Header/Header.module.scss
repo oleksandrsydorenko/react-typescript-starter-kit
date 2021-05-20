@@ -1,15 +1,18 @@
+@import 'styles/mixins.scss';
+@import 'styles/variables.scss';
+
 .header {
   display: flex;
-  flex-direction: row;
   align-items: center;
   padding: 20px;
   color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: $font-base;
 }
 
 .header__logo {
-  height: 30vmin;
-  animation: rotation 14s infinite linear;
+  @include animation-rotate(14s);
+
+  height: 270px;
 }
 
 .header__info {
@@ -18,18 +21,27 @@
 
 .header__title {
   margin-bottom: 10px;
-  font-size: 5vmin;
+  font-size: 46px;
 }
 
 .header__description {
-  font-size: 2.5vmin;
+  font-size: 22px;
 }
 
-@keyframes rotation {
-  from {
-    transform: rotate(0deg);
+@media #{$device-tablet_portrait},
+  #{$device-tablet_landscape},
+  #{$device-mobile_portrait},
+  #{$device-mobile_landscape} {
+  .header {
+    flex-direction: column;
+    justify-content: center;
   }
-  to {
-    transform: rotate(359deg);
+
+  .header__logo {
+    margin-bottom: 20px;
+  }
+
+  .header__info {
+    text-align: center;
   }
 }

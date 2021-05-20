@@ -1,0 +1,12 @@
+// desktop
+$device-desktop: '(min-width: 1281px)';
+// laptop, desktop (low resolution)
+$device-laptop: '(min-width: 1025px) and (max-width: 1280px)';
+// tablet (portrait)
+$device-tablet_portrait: '(min-width: 768px) and (max-width: 1024px)';
+// tablet (landscape)
+$device-tablet_landscape: '(min-width: 768px) and (max-width: 1024px) and (orientation: landscape)';
+// mobile (landscape), tablet (low resolution)
+$device-mobile_landscape: '(min-width: 481px) and (max-width: 767px)';
+// mobile (portrait)
+$device-mobile_portrait: '(min-width: 320px) and (max-width: 480px)';

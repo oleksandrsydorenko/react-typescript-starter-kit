@@ -1,12 +1,15 @@
+const RULE_ORDER_AT_RULE_INCLUDE = {
+  type: 'at-rule',
+  name: 'include',
+};
+
 module.exports = {
   extends: [
     // standard rules for styles
     'stylelint-config-standard',
     // rules for ordering styles
-    // must be defined before stylelint-config-prettier preset
     'stylelint-config-rational-order',
     // disables rules that can conflict with Prettier
-    // must be defined at the end of the presets list
     'stylelint-config-prettier',
   ],
   ignoreFiles: ['config'],
@@ -15,8 +18,24 @@ module.exports = {
     'stylelint-prettier',
   ],
   rules: {
+    // defines allowed at-rules
+    'at-rule-no-unknown': [
+      true,
+      {
+        ignoreAtRules: ['include', 'mixin'],
+      },
+    ],
     // defines styles order
     'order/order': [
+      // at-rule @include (e.g., div { @include some-mixin; })
+      {
+        ...RULE_ORDER_AT_RULE_INCLUDE,
+      },
+      // block at-rule @include (e.g., div { @include some-mixin {} })
+      {
+        ...RULE_ORDER_AT_RULE_INCLUDE,
+        hasBlock: true,
+      },
       // custom properties (e.g., --property: 10px;)
       'custom-properties',
       // dollar variables (e.g., $variable)
@@ -25,7 +44,7 @@ module.exports = {
       'declarations',
       // nested rules (e.g., a { span {} })
       'rules',
-      // nested at-rules (e.g., div { @media () {} })
+      // nested at-rules (e.g., @media () {})
       'at-rules',
     ],
     // defines Prettier rules as the Stylelint ones

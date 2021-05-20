@@ -1,9 +1,10 @@
 import React, { FC } from 'react';
+
 import Header from 'components/Header';
-import './App.scss';
+import styles from './App.module.scss';
 
 const App: FC = () => (
-  <div className="App">
+  <div className={styles.app}>
     <Header />
   </div>
 );

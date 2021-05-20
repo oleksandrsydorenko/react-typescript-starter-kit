@@ -16,6 +16,7 @@ module.exports = {
     html: './public/index.html',
     logo: './logo.png',
     public: './public',
+    styles: './src/styles',
   }).reduce(
     (acc, [key, value]) => ({
       ...acc,
