@@ -10,6 +10,7 @@ module.exports = {
     assets: './src/assets',
     cache: './node_modules/.cache/cache-loader',
     components: './src/components',
+    constants: './src/constants',
     dist: './dist',
     entry: './src/index.tsx',
     env: './.env',

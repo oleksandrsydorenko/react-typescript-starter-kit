@@ -9,6 +9,7 @@ module.exports = {
     '^~(.*)$': '<rootDir>/src$1',
     '^assets(.*)$': '<rootDir>/src/assets$1',
     '^components(.*)$': '<rootDir>/src/components$1',
+    '^constants(.*)$': '<rootDir>/src/constants$1',
     '^styles(.*)$': '<rootDir>/src/styles$1',
   },
   // defines paths to search for test files

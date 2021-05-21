@@ -11,7 +11,10 @@ module.exports = () => ({
   plugins: [
     // defines global variables
     new DefinePlugin({
-      'process.env': dotenv.config({ path: paths.env }).parsed,
+      'process.env': {
+        NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+        ...dotenv.config({ path: paths.env }).parsed,
+      },
     }),
   ],
 });

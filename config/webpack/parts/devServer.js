@@ -18,6 +18,7 @@ module.exports = () => ({
     contentBase: paths.public,
     historyApiFallback: true,
     host: DEV_SERVER_HOST,
+    hot: true,
     https: DEV_SERVER_PROTOCOL === 'https',
     overlay: {
       errors: true,

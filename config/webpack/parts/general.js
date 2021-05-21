@@ -34,8 +34,10 @@ module.exports = ({ sourceMapsType, stats } = {}) => ({
       '~': paths.app,
       assets: paths.assets,
       components: paths.components,
+      constants: paths.constants,
       styles: paths.styles,
     },
     extensions: ['.js', 'jsx', '.mjs', '.ts', '.tsx'],
   },
+  target: 'web',
 });

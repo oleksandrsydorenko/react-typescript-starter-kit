@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import logoSrc from 'assets/logo.svg';
+import logoSrc from 'assets/images/logo.svg';
 import styles from './Header.module.scss';
 
 const Header: FC = () => (
