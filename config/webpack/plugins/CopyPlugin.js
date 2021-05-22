@@ -1,6 +1,6 @@
 const CopyPlugin = require('copy-webpack-plugin');
 
-const { paths } = require('../constants');
+const PATHS = require('../../paths');
 
 /**
  * Setup CopyPlugin
@@ -13,7 +13,7 @@ module.exports = () => ({
     new CopyPlugin({
       patterns: [
         {
-          from: paths.public,
+          from: PATHS.PUBLIC,
           filter: resourcePath => !/index\.html/.test(resourcePath),
         },
       ],

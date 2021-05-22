@@ -1,7 +1,7 @@
 const dotenv = require('dotenv');
 const { DefinePlugin } = require('webpack');
 
-const { paths } = require('../constants');
+const PATHS = require('../../paths');
 
 const { NODE_ENV } = process.env;
 
@@ -16,7 +16,7 @@ module.exports = () => ({
       __appConfig: {
         env: {
           NODE_ENV: JSON.stringify(process.env.NODE_ENV),
-          ...dotenv.config({ path: paths.env }).parsed,
+          ...dotenv.config({ path: PATHS.ENV }).parsed,
         },
         isDevelopment: NODE_ENV === 'development',
         isProduction: NODE_ENV === 'production',

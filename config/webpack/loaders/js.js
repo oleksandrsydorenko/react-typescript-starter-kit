@@ -1,4 +1,4 @@
-const { paths } = require('../constants');
+const PATHS = require('../../paths');
 
 /**
  * Setup JS loaders
@@ -17,7 +17,7 @@ module.exports = ({ isCached, options } = {}) => ({
           isCached && {
             loader: 'cache-loader',
             options: {
-              cacheDirectory: paths.cache,
+              cacheDirectory: PATHS.CACHE,
             },
           },
           {

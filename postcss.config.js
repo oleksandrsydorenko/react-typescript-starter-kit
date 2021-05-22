@@ -4,7 +4,7 @@ const path = require('path');
 const purgeCss = require('@fullhuman/postcss-purgecss');
 const postCssFlexbugsFixes = require('postcss-flexbugs-fixes');
 
-const { paths } = require('./config/webpack/constants');
+const PATHS = require('./config/paths');
 
 module.exports = {
   plugins: [
@@ -13,8 +13,8 @@ module.exports = {
     process.env.NODE_ENV === 'production' &&
       purgeCss({
         content: [
-          paths.html,
-          ...glob.sync(path.join(paths.app, '**/*.{jsx,tsx}'), { nodir: true }),
+          PATHS.HTML,
+          ...glob.sync(path.join(PATHS.APP, '**/*.{jsx,tsx}'), { nodir: true }),
         ],
       }),
   ].filter(Boolean),

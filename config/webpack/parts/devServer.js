@@ -1,6 +1,6 @@
 const opn = require('better-opn');
 
-const { paths } = require('../constants');
+const PATHS = require('../../paths');
 
 const DEV_SERVER_HOST = 'localhost';
 const DEV_SERVER_PORT = 3000;
@@ -15,7 +15,7 @@ module.exports = () => ({
     after: () =>
       opn(`${DEV_SERVER_PROTOCOL}://${DEV_SERVER_HOST}:${DEV_SERVER_PORT}`),
     compress: true,
-    contentBase: paths.public,
+    contentBase: PATHS.PUBLIC,
     historyApiFallback: true,
     host: DEV_SERVER_HOST,
     hot: true,

@@ -2,7 +2,7 @@ const loaderUtils = require('loader-utils');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const { paths } = require('../constants');
+const PATHS = require('../../paths');
 
 const generateIdentifier =
   isMasked => (context, localIdentName, localName, options) => {
@@ -56,7 +56,7 @@ module.exports = ({
     isCached && {
       loader: 'cache-loader',
       options: {
-        cacheDirectory: paths.cache,
+        cacheDirectory: PATHS.CACHE,
       },
     },
     {

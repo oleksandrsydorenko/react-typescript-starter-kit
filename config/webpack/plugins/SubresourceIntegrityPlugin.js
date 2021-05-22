@@ -1,6 +1,6 @@
 const SubresourceIntegrityPlugin = require('webpack-subresource-integrity');
 
-const { integrityHashAlgorithms } = require('../constants');
+const { INTEGRITY_HASH_ALGORITHMS } = require('../constants');
 
 /**
  * Setup SubresourceIntegrityPlugin
@@ -12,7 +12,7 @@ module.exports = () => ({
     // plugin can interfere with hot reloading and should be disabled when using tools such as webpack-dev-server
     // to use SRI and HTTP together should be set the "Cache-Control: no-transform" response header
     new SubresourceIntegrityPlugin({
-      hashFuncNames: integrityHashAlgorithms,
+      hashFuncNames: INTEGRITY_HASH_ALGORITHMS,
     }),
   ],
 });

@@ -1,4 +1,4 @@
-const { paths } = require('../constants');
+const PATHS = require('../../paths');
 
 const { NODE_ENV, SOURCE_MAPS_ENABLED } = process.env;
 
@@ -12,7 +12,7 @@ const { NODE_ENV, SOURCE_MAPS_ENABLED } = process.env;
 module.exports = ({ sourceMapsType = false, stats } = {}) => ({
   stats,
   entry: {
-    main: paths.entry,
+    main: PATHS.ENTRY,
   },
   devtool: SOURCE_MAPS_ENABLED === 'true' ? 'source-map' : sourceMapsType,
   mode: NODE_ENV,
@@ -24,16 +24,16 @@ module.exports = ({ sourceMapsType = false, stats } = {}) => ({
     crossOriginLoading: 'anonymous',
     // generates bundle with file name by template
     filename: 'js/[name].[contenthash:5].js',
-    path: paths.dist,
+    path: PATHS.DIST,
   },
   resolve: {
     // defines aliases to import/require modules
     // it is important to sync aliases with jest.config.js
     alias: {
-      '@assets': paths.assets,
-      '@components': paths.components,
-      '@pages': paths.pages,
-      '@styles': paths.styles,
+      '@assets': PATHS.ASSETS,
+      '@components': PATHS.COMPONENTS,
+      '@pages': PATHS.PAGES,
+      '@styles': PATHS.STYLES,
     },
     extensions: ['.js', 'jsx', '.mjs', '.ts', '.tsx'],
   },

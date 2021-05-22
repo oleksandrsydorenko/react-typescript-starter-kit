@@ -1,6 +1,6 @@
 const HtmlPlugin = require('html-webpack-plugin');
 
-const { paths } = require('../constants');
+const PATHS = require('../../paths');
 
 /**
  * Setup HtmlPlugin
@@ -10,7 +10,7 @@ module.exports = () => ({
   plugins: [
     // generates index.html and injects in it entry script
     new HtmlPlugin({
-      template: paths.html,
+      template: PATHS.HTML,
     }),
   ],
 });
