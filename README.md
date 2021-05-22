@@ -1,6 +1,6 @@
 # React-Typescript Starter Kit
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-red.svg)](/LICENSE)
+[![License MIT badge](https://img.shields.io/badge/License-MIT-red.svg)](/LICENSE) [![Up to date dependencies status badge](https://status.david-dm.org/gh/oleksandrsydorenko/react-typescript-starter-kit.svg)](https://david-dm.org/oleksandrsydorenko/react-typescript-starter-kit) [![Up to date devDependencies status badge](https://status.david-dm.org/gh/oleksandrsydorenko/react-typescript-starter-kit.svg?type=dev)](https://david-dm.org/oleksandrsydorenko/react-typescript-starter-kit?type=dev)
 
 Starter kit for [React](https://reactjs.org/) web applications build on [Webpack 5](https://webpack.js.org/), [Babel](https://babeljs.io/), [TypeScript](https://www.typescriptlang.org/), [Sass](https://sass-lang.com/) stack with preconfigured [ESlint](https://eslint.org/), [Prettier](https://prettier.io/), [Stylelint](https://stylelint.io/), [Lint-Staged](https://github.com/okonet/lint-staged), [Commitlint](https://github.com/conventional-changelog/commitlint), [Husky](https://github.com/typicode/husky) and [Jest](https://jestjs.io/).
 
@@ -8,16 +8,17 @@ Starter kit for [React](https://reactjs.org/) web applications build on [Webpack
 
 ## Features
 
-- Supporting the latest [EcmaScript](https://ecma-international.org/) features and feature proposals.
+- Support of the latest [EcmaScript](https://ecma-international.org/) features and feature proposals.
 - Compiling TypeScript through [Babel](https://babeljs.io/), type checking with [Fork TS Checker Webpack Plugin](https://github.com/TypeStrong/fork-ts-checker-webpack-plugin#readme).
-- Autoprefixing CSS with [Autoprefixer](https://github.com/postcss/autoprefixer#readme), removing unused CSS with [PurgeCSS](https://github.com/FullHuman/purgecss#readme), optimizing/minifying CSS with [Optimize CSS Assets Webpack Plugin](https://github.com/NMFR/optimize-css-assets-webpack-plugin#readme).
+- Minifying JS with [Terser Webpack Plugin](https://github.com/webpack-contrib/terser-webpack-plugin#readme).
+- Autoprefixing CSS with [Autoprefixer](https://github.com/postcss/autoprefixer#readme), optimizing/minifying CSS with [CSS Minimizer Webpack Plugin](https://github.com/webpack-contrib/css-minimizer-webpack-plugin#readme).
 - Targeting browsers with [Browserslist](https://github.com/browserslist/browserslist#readme).
-- Optimized code splitting for better caching by splitting out common modules and each NPM package separately.
+- Optimized code splitting for better caching by splitting out common modules and each vendor module separately.
 - Verifying fetched resources using [Subresource Integrity (SRI)](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity) with [Webpack Subresource Integrity Plugin](https://github.com/waysact/webpack-subresource-integrity#readme).
+- Compressing files using [Brotli](https://github.com/google/brotli#readme) algorithm.
+- Compressing/optimizing images with [Image Minimizer Webpack Plugin](https://github.com/webpack-contrib/image-minimizer-webpack-plugin#readme).
 - Linting and formatting React/JavaScript/TypeScript/CSS/Sass with [ESlint](https://eslint.org/), [Stylelint](https://stylelint.io/), [Prettier](https://prettier.io/), [Lint-Staged](https://github.com/okonet/lint-staged#readme) and [Husky](https://github.com/typicode/husky#readme).
 - Linting commit messages in accordance to [Conventional Commits Specification](https://www.conventionalcommits.org/en/v1.0.0/) with [commitlint](https://github.com/conventional-changelog/commitlint#readme) and [Husky](https://github.com/typicode/husky#readme).
-- Compressing files using [Brotli](https://github.com/google/brotli#readme) algorithm.
-- Optimizing/minifying `GIF/JPEG/JPG/PNG/WEBP/SVG` files with [Image Webpack Loader](https://github.com/tcoopman/image-webpack-loader#readme) and [SVGO Loader](https://github.com/rpominov/svgo-loader#readme).
 - Testing with [Jest](https://jestjs.io/).
 
 ## Installation
