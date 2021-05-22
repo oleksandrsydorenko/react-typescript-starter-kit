@@ -5,17 +5,16 @@ const { NODE_ENV, SOURCE_MAPS_ENABLED } = process.env;
 /**
  * Setup general options
  * @param {Object} [props] - Properties
- * @param {string} [props.sourceMapsType] - Source maps type
+ * @param {string|boolean} [props.sourceMapsType] - Source maps type
  * @param {string} [props.stats] - Stats report type
  * @return {Object} General options config
  */
-module.exports = ({ sourceMapsType, stats } = {}) => ({
+module.exports = ({ sourceMapsType = false, stats } = {}) => ({
   stats,
   entry: {
     main: paths.entry,
   },
-  devtool:
-    SOURCE_MAPS_ENABLED === 'true' ? 'source-map' : sourceMapsType || false,
+  devtool: SOURCE_MAPS_ENABLED === 'true' ? 'source-map' : sourceMapsType,
   mode: NODE_ENV,
   output: {
     // generates chunk with file names by template

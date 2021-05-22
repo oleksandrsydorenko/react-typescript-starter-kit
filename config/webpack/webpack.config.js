@@ -35,7 +35,7 @@ const getDevelopmentConfig = () =>
     parts.devServer(),
     parts.general({
       // defines source maps type
-      sourceMapsType: 'eval-cheap-module-source-map',
+      sourceMapsType: 'inline-source-map',
       // defines stats report type
       stats: STATS_PRESET || 'errors-warnings',
     }),
@@ -52,11 +52,14 @@ const getProductionConfig = () =>
     plugins.CleanPlugin(),
     plugins.CompressionPlugin(),
     plugins.CopyPlugin(),
+    plugins.CssMinimizerPlugin(),
     plugins.HtmlPlugin(),
     plugins.ImageMinimizerPlugin(),
     plugins.MiniCssExtractPlugin(),
-    plugins.OptimizeCssAssetsPlugin(),
     plugins.SubresourceIntegrityPlugin(),
+    plugins.TerserPlugin({
+      parallel: true,
+    }),
   );
 
 module.exports = () =>
