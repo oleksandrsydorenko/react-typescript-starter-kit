@@ -8,6 +8,9 @@
     "lib": ["dom", "dom.iterable", "esnext", "webworker"],
     "module": "esnext",
     "moduleResolution": "node",
+    "paths": {
+      "@*": ["./*"]
+    },
     "pretty": true,
     "removeComments": true,
     "strict": true,

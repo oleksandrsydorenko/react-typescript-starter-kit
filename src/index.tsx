@@ -1,8 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-import 'styles/resets.scss';
-import env from 'constants/env';
+import '@styles/main.scss';
 import App from './App';
 
 render(
@@ -12,6 +11,6 @@ render(
   document.getElementById('root'),
 );
 
-if (env.isDevelopment && module.hot) {
+if (module.hot) {
   module.hot.accept();
 }

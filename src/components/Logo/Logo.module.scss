@@ -1,0 +1,7 @@
+@import '@styles/mixins.scss';
+
+.logo {
+  @include animation-rotate(14s);
+
+  width: 270px;
+}

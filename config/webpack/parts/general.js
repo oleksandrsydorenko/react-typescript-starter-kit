@@ -31,11 +31,10 @@ module.exports = ({ sourceMapsType, stats } = {}) => ({
     // defines aliases to import/require modules
     // it is important to sync aliases with jest.config.js
     alias: {
-      '~': paths.app,
-      assets: paths.assets,
-      components: paths.components,
-      constants: paths.constants,
-      styles: paths.styles,
+      '@assets': paths.assets,
+      '@components': paths.components,
+      '@pages': paths.pages,
+      '@styles': paths.styles,
     },
     extensions: ['.js', 'jsx', '.mjs', '.ts', '.tsx'],
   },

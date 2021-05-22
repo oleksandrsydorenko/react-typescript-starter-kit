@@ -1,12 +1,7 @@
 import React, { FC } from 'react';
 
-import Header from 'components/Header';
-import styles from './App.module.scss';
+import { Home } from '@pages';
 
-const App: FC = () => (
-  <div className={styles.app}>
-    <Header />
-  </div>
-);
+const App: FC = () => <Home />;
 
 export default App;

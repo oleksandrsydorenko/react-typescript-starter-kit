@@ -1,4 +1,4 @@
-@import 'styles/animations/rotation.scss';
+@import '@styles/animations/rotation.scss';
 
 @mixin animation-rotate($delay) {
   animation: rotation $delay infinite linear;

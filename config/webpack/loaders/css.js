@@ -4,36 +4,32 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const { paths } = require('../constants');
 
-const generateIdentifier = isMasked => (
-  context,
-  localIdentName,
-  localName,
-  options,
-) => {
-  if (/module\.(css|s[ac]ss)$/g.test(context.resourcePath)) {
-    const hash = loaderUtils.getHashDigest(
-      path.posix.relative(context.rootContext, context.resourcePath) +
-        localName,
-      'md5',
-      'base64',
-      5,
-    );
+const generateIdentifier =
+  isMasked => (context, localIdentName, localName, options) => {
+    if (/module\.(css|s[ac]ss)$/g.test(context.resourcePath)) {
+      const hash = loaderUtils.getHashDigest(
+        path.posix.relative(context.rootContext, context.resourcePath) +
+          localName,
+        'md5',
+        'base64',
+        5,
+      );
 
-    return isMasked
-      ? `${localName.substring(0, 1)}_${hash}`
-      : loaderUtils
-          .interpolateName(
-            context,
-            /index\.(css|s[ac]ss)$/.test(context.resourcePath)
-              ? `[folder]__${localName}__${hash}`
-              : `[name]__${localName}__${hash}`,
-            options,
-          )
-          .replace('.module', '');
-  }
+      return isMasked
+        ? `${localName.substring(0, 1)}_${hash}`
+        : loaderUtils
+            .interpolateName(
+              context,
+              /index\.(css|s[ac]ss)$/.test(context.resourcePath)
+                ? `[folder]__${localName}__${hash}`
+                : `[name]__${localName}__${hash}`,
+              options,
+            )
+            .replace('.module', '');
+    }
 
-  return localName;
-};
+    return localName;
+  };
 
 /**
  * Setup CSS loaders

@@ -1,22 +1,9 @@
-@import 'styles/mixins.scss';
-@import 'styles/variables.scss';
+@import '@styles/variables.scss';
 
 .header {
-  display: flex;
-  align-items: center;
-  padding: 20px;
+  max-width: 400px;
   color: #fff;
   font-family: $font-base;
-}
-
-.header__logo {
-  @include animation-rotate(14s);
-
-  height: 270px;
-}
-
-.header__info {
-  max-width: 400px;
 }
 
 .header__title {
@@ -28,20 +15,8 @@
   font-size: 22px;
 }
 
-@media #{$device-tablet_portrait},
-  #{$device-tablet_landscape},
-  #{$device-mobile_portrait},
-  #{$device-mobile_landscape} {
+@media #{$device-tablet}, #{$device-mobile} {
   .header {
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .header__logo {
-    margin-bottom: 20px;
-  }
-
-  .header__info {
     text-align: center;
   }
 }

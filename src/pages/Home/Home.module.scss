@@ -1,0 +1,16 @@
+@import '@styles/variables.scss';
+
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: $color-background-astronaut;
+}
+
+@media #{$device-tablet}, #{$device-mobile} {
+  .home {
+    flex-direction: column;
+  }
+}
