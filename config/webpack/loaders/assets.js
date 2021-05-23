@@ -1,4 +1,4 @@
-const FILE_TEMPLATE = '[name].[contenthash:5][ext]';
+const { ASSET_TEMPLATE } = require('../constants');
 
 /**
  * Setup assets loaders
@@ -11,21 +11,21 @@ module.exports = () => ({
         test: /\.(gif|jp(e)?g|png|webp)$/,
         type: 'asset',
         generator: {
-          filename: `images/${FILE_TEMPLATE}`,
+          filename: `images/${ASSET_TEMPLATE}`,
         },
       },
       {
         test: /\.svg$/,
         type: 'asset',
         generator: {
-          filename: `svg/${FILE_TEMPLATE}`,
+          filename: `svg/${ASSET_TEMPLATE}`,
         },
       },
       {
         test: /\.(eot|ttf|woff(2)?)$/,
         type: 'asset/resource',
         generator: {
-          filename: `fonts/${FILE_TEMPLATE}`,
+          filename: `fonts/${ASSET_TEMPLATE}`,
         },
       },
     ],

@@ -1,10 +1,11 @@
 const opn = require('better-opn');
 
 const PATHS = require('../../paths');
-
-const DEV_SERVER_HOST = 'localhost';
-const DEV_SERVER_PORT = 3000;
-const DEV_SERVER_PROTOCOL = 'http';
+const {
+  DEV_SERVER_HOST,
+  DEV_SERVER_PORT,
+  DEV_SERVER_PROTOCOL,
+} = require('../constants');
 
 /**
  * Setup development server

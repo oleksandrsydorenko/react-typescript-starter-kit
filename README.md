@@ -13,7 +13,7 @@ Starter kit for [React](https://reactjs.org/) web applications build on [Webpack
 - Minifying JS with [Terser Webpack Plugin](https://github.com/webpack-contrib/terser-webpack-plugin#readme).
 - Autoprefixing CSS with [Autoprefixer](https://github.com/postcss/autoprefixer#readme), optimizing/minifying CSS with [CSS Minimizer Webpack Plugin](https://github.com/webpack-contrib/css-minimizer-webpack-plugin#readme).
 - Targeting browsers with [Browserslist](https://github.com/browserslist/browserslist#readme).
-- Optimized code splitting for better caching by splitting out common modules and each vendor module separately.
+- Optimized code splitting for the best browser caching.
 - Verifying fetched resources using [Subresource Integrity (SRI)](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity) with [Webpack Subresource Integrity Plugin](https://github.com/waysact/webpack-subresource-integrity#readme).
 - Compressing files using [Brotli](https://github.com/google/brotli#readme) algorithm.
 - Compressing/optimizing images with [Image Minimizer Webpack Plugin](https://github.com/webpack-contrib/image-minimizer-webpack-plugin#readme).

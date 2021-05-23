@@ -1,4 +1,5 @@
 const PATHS = require('../../paths');
+const { BUNDLE_TEMPLATE, CHUNK_TEMPLATE } = require('../constants');
 
 const { NODE_ENV, SOURCE_MAPS_ENABLED } = process.env;
 
@@ -17,24 +18,18 @@ module.exports = ({ sourceMapsType = false, stats } = {}) => ({
   devtool: SOURCE_MAPS_ENABLED === 'true' ? 'source-map' : sourceMapsType,
   mode: NODE_ENV,
   output: {
-    // generates chunk with file names by template
-    chunkFilename: 'js/[name].[chunkhash:5].chunk.js',
+    // generates chunk
+    chunkFilename: `js/${CHUNK_TEMPLATE}.chunk.js`,
     // configures the "crossorigin" attribute for script tags
     // required option for webpack-subresource-integrity plugin
     crossOriginLoading: 'anonymous',
-    // generates bundle with file name by template
-    filename: 'js/[name].[contenthash:5].js',
+    // generates bundle
+    filename: `js/${BUNDLE_TEMPLATE}.js`,
     path: PATHS.DIST,
   },
   resolve: {
     // defines aliases to import/require modules
-    // it is important to sync aliases with jest.config.js
-    alias: {
-      '@assets': PATHS.ASSETS,
-      '@components': PATHS.COMPONENTS,
-      '@pages': PATHS.PAGES,
-      '@styles': PATHS.STYLES,
-    },
+    alias: PATHS.ALIASES,
     extensions: ['.js', 'jsx', '.mjs', '.ts', '.tsx'],
   },
   target: 'web',
