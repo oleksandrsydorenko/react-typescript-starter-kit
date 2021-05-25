@@ -11,7 +11,7 @@ Starter kit for [React](https://reactjs.org/) web applications build on [Webpack
 - Support of the latest [EcmaScript](https://ecma-international.org/) features and feature proposals.
 - Compiling TypeScript through [Babel](https://babeljs.io/), type checking with [Fork TS Checker Webpack Plugin](https://github.com/TypeStrong/fork-ts-checker-webpack-plugin#readme).
 - Minifying JS with [Terser Webpack Plugin](https://github.com/webpack-contrib/terser-webpack-plugin#readme).
-- Autoprefixing CSS with [Autoprefixer](https://github.com/postcss/autoprefixer#readme), optimizing/minifying CSS with [CSS Minimizer Webpack Plugin](https://github.com/webpack-contrib/css-minimizer-webpack-plugin#readme).
+- Autoprefixing CSS with [Autoprefixer](https://github.com/postcss/autoprefixer#readme), removing unused CSS with [PurgeCSS](https://github.com/FullHuman/purgecss#readme), optimizing/minifying CSS with [CSS Minimizer Webpack Plugin](https://github.com/webpack-contrib/css-minimizer-webpack-plugin#readme).
 - Targeting browsers with [Browserslist](https://github.com/browserslist/browserslist#readme).
 - Optimized code splitting for the best browser caching.
 - Verifying fetched resources using [Subresource Integrity (SRI)](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity) with [Webpack Subresource Integrity Plugin](https://github.com/waysact/webpack-subresource-integrity#readme).
