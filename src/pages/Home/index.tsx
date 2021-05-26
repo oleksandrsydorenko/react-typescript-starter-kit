@@ -1,9 +1,9 @@
-import React, { FC } from 'react';
+import React from 'react';
 
 import { Header, Logo } from '@components';
 import styles from './Home.module.scss';
 
-const Home: FC = () => (
+const Home = (): JSX.Element => (
   <div className={styles.home}>
     <Logo />
     <Header />

@@ -1,6 +1,6 @@
 const HtmlPlugin = require('html-webpack-plugin');
 
-const PATHS = require('../../paths');
+const { PATHS } = require('../constants');
 
 /**
  * Setup HtmlPlugin

@@ -1,4 +1,4 @@
-const PATHS = require('../../paths');
+const { PATHS } = require('../constants');
 
 /**
  * Setup JS loaders

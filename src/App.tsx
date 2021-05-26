@@ -1,7 +1,7 @@
-import React, { FC } from 'react';
+import React from 'react';
 
 import { Home } from '@pages';
 
-const App: FC = () => <Home />;
+const App = (): JSX.Element => <Home />;
 
 export default App;

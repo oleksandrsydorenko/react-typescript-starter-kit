@@ -1,25 +1,16 @@
-const dotenv = require('dotenv');
 const { DefinePlugin } = require('webpack');
-
-const PATHS = require('../../paths');
-
-const { NODE_ENV } = process.env;
 
 /**
  * Setup DefinePlugin
+ * @param {Object} [config] - Environment variables config
  * @return {Object} DefinePlugin
  */
-module.exports = () => ({
+module.exports = (config = {}) => ({
   plugins: [
     // defines global variables
     new DefinePlugin({
       __appConfig: {
-        env: {
-          NODE_ENV: JSON.stringify(process.env.NODE_ENV),
-          ...dotenv.config({ path: PATHS.ENV }).parsed,
-        },
-        isDevelopment: NODE_ENV === 'development',
-        isProduction: NODE_ENV === 'production',
+        ...config,
         version: JSON.stringify(process.env.npm_package_version),
       },
     }),

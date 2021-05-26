@@ -1,8 +1,8 @@
-import React, { FC } from 'react';
+import React from 'react';
 
 import styles from './Header.module.scss';
 
-const Header: FC = () => (
+const Header = (): JSX.Element => (
   <div className={styles.header}>
     <h1 className={styles.header__title}>React-TypeScript Starter Kit</h1>
     <p className={styles.header__description}>

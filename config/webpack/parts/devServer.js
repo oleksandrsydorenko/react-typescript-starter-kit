@@ -1,10 +1,10 @@
 const opn = require('better-opn');
 
-const PATHS = require('../../paths');
 const {
   DEV_SERVER_HOST,
   DEV_SERVER_PORT,
   DEV_SERVER_PROTOCOL,
+  PATHS,
 } = require('../constants');
 
 /**

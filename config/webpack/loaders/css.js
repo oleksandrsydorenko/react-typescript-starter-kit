@@ -2,7 +2,7 @@ const loaderUtils = require('loader-utils');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const PATHS = require('../../paths');
+const { PATHS } = require('../constants');
 
 const generateIdentifier =
   isMasked => (context, localIdentName, localName, options) => {

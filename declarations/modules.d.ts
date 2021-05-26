@@ -47,14 +47,9 @@ declare module '*.png' {
 }
 
 declare module '*.svg' {
-  import React = require('react');
+  const content: string;
 
-  const src: string;
-
-  export const ReactComponent: React.FunctionComponent<
-    React.SVGProps<SVGSVGElement>
-  >;
-  export default src;
+  export default content;
 }
 
 declare module '*.webp' {

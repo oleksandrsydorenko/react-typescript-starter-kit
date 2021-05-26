@@ -10,11 +10,10 @@ module.exports = () => ({
     runtimeChunk: {
       name: ({ name }) => `runtime${FILENAME_DELIMITER}${name}`,
     },
-    moduleIds: 'deterministic',
     splitChunks: {
       automaticNameDelimiter: FILENAME_DELIMITER,
       cacheGroups: {
-        common: {
+        default: {
           // separates async and sync chunks
           chunks: 'all',
           // generates chunk only if module shared between minimum 2 chunks
@@ -24,7 +23,7 @@ module.exports = () => ({
           // enables reusing modules that already split instead of creating new chunk
           reuseExistingChunk: true,
         },
-        vendor: {
+        defaultVendors: {
           test: /[\\/]node_modules[\\/]/,
           chunks: 'all',
           priority: 2,

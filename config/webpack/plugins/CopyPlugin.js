@@ -1,6 +1,6 @@
 const CopyPlugin = require('copy-webpack-plugin');
 
-const PATHS = require('../../paths');
+const { PATHS } = require('../constants');
 
 /**
  * Setup CopyPlugin
