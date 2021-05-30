@@ -1,4 +1,4 @@
-const SubresourceIntegrityPlugin = require('webpack-subresource-integrity');
+const { SubresourceIntegrityPlugin } = require('webpack-subresource-integrity');
 
 const { INTEGRITY_HASH_ALGORITHMS } = require('../constants');
 
