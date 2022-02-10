@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { PATHS } = require('../constants');
 
 const generateIdentifier =
-  isMasked => (context, localIdentName, localName, options) => {
+  isMaskedIdentifiers => (context, localIdentName, localName, options) => {
     if (/module\.(css|s[ac]ss)$/g.test(context.resourcePath)) {
       const hash = loaderUtils.getHashDigest(
         path.posix.relative(context.rootContext, context.resourcePath) +
@@ -15,7 +15,7 @@ const generateIdentifier =
         5,
       );
 
-      return isMasked
+      return isMaskedIdentifiers
         ? `${localName.substring(0, 1)}_${hash}`
         : loaderUtils
             .interpolateName(
@@ -35,18 +35,16 @@ const generateIdentifier =
  * Setup CSS loaders
  * @param {Object} [props] - Properties
  * @param {string} [props.baseLoader] - Base loader
- * @param {boolean} [props.isCached] - Cache enabled flag
- * @param {boolean} [props.isMasked] - Identifiers mask enabled flag
+ * @param {boolean} [props.isCached] - Cache enable flag
+ * @param {boolean} [props.isMaskedIdentifiers] - Masked identifiers enable flag
  * @return {Object} CSS loaders config
  */
 module.exports = ({
   baseLoader = MiniCssExtractPlugin.loader,
   isCached,
-  isMasked = true,
+  isMaskedIdentifiers = true,
 } = {}) => {
   const regex = {
-    css: /\.css$/,
-    cssModule: /\.module\.css$/,
     sass: /\.s[ac]ss$/,
     sassModule: /\.module\.s[ac]ss$/,
   };
@@ -63,7 +61,7 @@ module.exports = ({
       loader: 'css-loader',
       options: {
         modules: {
-          getLocalIdent: generateIdentifier(isMasked),
+          getLocalIdent: generateIdentifier(isMaskedIdentifiers),
         },
       },
     },
@@ -75,15 +73,6 @@ module.exports = ({
   return {
     module: {
       rules: [
-        {
-          test: regex.css,
-          exclude: regex.cssModule,
-          use: cssLoaders,
-        },
-        {
-          test: regex.cssModule,
-          use: cssLoaders,
-        },
         {
           test: regex.sass,
           exclude: regex.sassModule,

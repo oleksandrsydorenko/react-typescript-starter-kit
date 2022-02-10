@@ -9,11 +9,12 @@ const { PATHS } = require('../constants');
 
 module.exports = () => ({
   plugins: [
-    // copies files
+    // copies files from provided path to a dist folder
     new CopyPlugin({
       patterns: [
         {
-          from: PATHS.PUBLIC,
+          from: PATHS.STATIC,
+          to: PATHS.DIST,
           filter: resourcePath => !/index\.html/.test(resourcePath),
         },
       ],

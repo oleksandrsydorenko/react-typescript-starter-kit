@@ -1,5 +1,3 @@
-const opn = require('better-opn');
-
 const {
   DEV_SERVER_HOST,
   DEV_SERVER_PORT,
@@ -13,20 +11,15 @@ const {
  */
 module.exports = () => ({
   devServer: {
-    after: () =>
-      opn(`${DEV_SERVER_PROTOCOL}://${DEV_SERVER_HOST}:${DEV_SERVER_PORT}`),
     compress: true,
-    contentBase: PATHS.PUBLIC,
     historyApiFallback: true,
     host: DEV_SERVER_HOST,
     hot: true,
     https: DEV_SERVER_PROTOCOL === 'https',
-    overlay: {
-      errors: true,
-      warnings: false,
-    },
+    open: true,
     port: DEV_SERVER_PORT,
-    stats: 'errors-only',
-    watchContentBase: true,
+    static: {
+      directory: PATHS.STATIC,
+    },
   },
 });

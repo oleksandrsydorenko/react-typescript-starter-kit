@@ -5,27 +5,19 @@ const RULE_ORDER_AT_RULE_INCLUDE = {
 
 module.exports = {
   extends: [
-    // standard rules for styles
     'stylelint-config-standard',
-    // rules for ordering styles
     'stylelint-config-rational-order',
-    // disables rules that can conflict with Prettier
     'stylelint-config-prettier',
   ],
   ignoreFiles: ['config'],
-  plugins: [
-    // allows to run Prettier rules as the Stylelint ones
-    'stylelint-prettier',
-  ],
+  plugins: ['stylelint-prettier'],
   rules: {
-    // defines allowed at-rules
     'at-rule-no-unknown': [
       true,
       {
         ignoreAtRules: ['include', 'mixin'],
       },
     ],
-    // defines styles order
     'order/order': [
       // at-rule @include (e.g., div { @include some-mixin; })
       {
@@ -47,7 +39,6 @@ module.exports = {
       // nested at-rules (e.g., @media () {})
       'at-rules',
     ],
-    // defines Prettier rules as the Stylelint ones
     'prettier/prettier': true,
   },
 };

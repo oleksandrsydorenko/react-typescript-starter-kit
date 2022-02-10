@@ -4,15 +4,14 @@ const loaders = require('./loaders');
 const parts = require('./parts');
 const plugins = require('./plugins');
 
-const { NODE_ENV, WEBPACK_SOURCE_MAPS_ENABLED, WEBPACK_STATS_PRESET } =
-  process.env;
-const isProduction = NODE_ENV === 'production';
+const isDevelopment = process.env.NODE_ENV === 'development';
+const isProduction = process.env.NODE_ENV === 'production';
 
 const defaultConfig = merge(
   loaders.assets(),
   plugins.DefinePlugin({
+    isDevelopment,
     isProduction,
-    isDevelopment: !isProduction,
   }),
   plugins.ForkTsCheckerPlugin(),
 );
@@ -22,22 +21,16 @@ const getDevelopmentConfig = () =>
     loaders.css({
       baseLoader: 'style-loader',
       isCached: true,
-      // generates non masked identifiers
-      isMasked: false,
+      isMaskedIdentifiers: false,
     }),
     loaders.js({
       isCached: true,
       options: {
-        // enables babel-loader caching (cache directory: ./node_modules/.cache/babel-loader)
         cacheDirectory: true,
-        cacheCompression: false,
       },
     }),
     parts.devServer(),
-    parts.general({
-      mode: 'development',
-      sourceMapsType: 'inline-source-map',
-    }),
+    parts.general(),
     plugins.HtmlPlugin(),
   );
 
@@ -46,12 +39,11 @@ const getProductionConfig = () =>
     loaders.css(),
     loaders.js(),
     parts.general({
-      sourceMapsType: WEBPACK_SOURCE_MAPS_ENABLED === 'true' && 'source-map',
-      stats: WEBPACK_STATS_PRESET,
+      isSourceMapEnabled: process.env.WEBPACK_SOURCE_MAPS_ENABLED === 'true',
+      stats: process.env.WEBPACK_STATS,
     }),
     parts.splitChunks(),
     plugins.AssetsManifestPlugin(),
-    plugins.CleanPlugin(),
     plugins.CompressionPlugin(),
     plugins.CopyPlugin(),
     plugins.CssMinimizerPlugin(),

@@ -8,7 +8,7 @@ const { PATHS } = require('../constants');
  */
 module.exports = () => ({
   plugins: [
-    // generates index.html and injects in it entry script
+    // generates index.html and serves bundle into it
     new HtmlPlugin({
       template: PATHS.HTML,
     }),

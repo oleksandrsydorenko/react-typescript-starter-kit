@@ -1,39 +1,33 @@
 const { BUNDLE_TEMPLATE, CHUNK_TEMPLATE, PATHS } = require('../constants');
 
 /**
- * Setup general options
+ * Setup general config
  * @param {Object} [props] - Properties
- * @param {string} [props.mode] - Configuration mode
- * @param {string|boolean} [props.sourceMapsType] - Source maps type
+ * @param {string|boolean} [props.isSourceMapEnabled] - Source map type
  * @param {string} [props.stats] - Stats report type
- * @return {Object} General options config
+ * @return {Object} General config
  */
-module.exports = ({
-  mode = 'production',
-  sourceMapsType = false,
-  stats = 'normal',
-} = {}) => ({
-  mode,
+module.exports = ({ isSourceMapEnabled = true, stats = 'normal' } = {}) => ({
   stats,
   entry: {
     main: PATHS.ENTRY,
   },
-  devtool: sourceMapsType,
+  devtool: isSourceMapEnabled && 'source-map',
+  mode: process.env.NODE_ENV,
   output: {
-    // generates chunk to provided path
+    // path and filename template for chunks
     chunkFilename: `js/${CHUNK_TEMPLATE}.chunk.js`,
     // adds "crossorigin" attribute for script tags
     // required option for webpack-subresource-integrity plugin
     crossOriginLoading: 'anonymous',
-    // generates bundle to provided path
+    // path and filename template for bundle
     filename: `js/${BUNDLE_TEMPLATE}.js`,
-    // defines the path for compiled files
-    // required option for clean-webpack-plugin
+    // path for compiled files
     path: PATHS.DIST,
   },
   resolve: {
     // defines aliases for modules
     alias: PATHS.ALIASES,
-    extensions: ['.js', 'jsx', '.mjs', '.ts', '.tsx'],
+    extensions: ['.js', '.ts', '.tsx'],
   },
 });

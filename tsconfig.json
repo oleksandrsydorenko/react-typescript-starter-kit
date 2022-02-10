@@ -4,18 +4,27 @@
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
-    "jsx": "preserve",
+    "jsx": "react",
+    "isolatedModules": true,
     "lib": ["dom", "dom.iterable", "esnext", "webworker"],
     "module": "esnext",
     "moduleResolution": "node",
+    "noEmit": true,
     "paths": {
-      "@*": ["./*"]
+      "@assets": ["assets"],
+      "@assets/*": ["assets/*"],
+      "@components": ["components"],
+      "@components/*": ["components/*"],
+      "@pages": ["pages"],
+      "@pages/*": ["pages/*"],
+      "@styles": ["styles"],
+      "@styles/*": ["styles/*"]
     },
     "pretty": true,
-    "removeComments": true,
+    "skipLibCheck": true,
     "strict": true,
-    "target": "es6"
+    "target": "esnext"
   },
-  "exclude": ["dist", "node_modules"],
-  "include": ["**/*.ts", "**/*.tsx"]
+  "exclude": ["node_modules"],
+  "include": ["declarations", "src"]
 }

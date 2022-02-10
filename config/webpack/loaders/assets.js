@@ -1,8 +1,8 @@
 const { ASSET_TEMPLATE } = require('../constants');
 
 /**
- * Setup assets loaders
- * @return {Object} Assets loaders config
+ * Setup asset loaders
+ * @return {Object} Asset loaders config
  */
 module.exports = () => ({
   module: {

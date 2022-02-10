@@ -7,7 +7,7 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 module.exports = () => ({
   optimization: {
     minimizer: [
-      // minifies CSS
+      // minifies CSS files
       new CssMinimizerPlugin(),
     ],
   },

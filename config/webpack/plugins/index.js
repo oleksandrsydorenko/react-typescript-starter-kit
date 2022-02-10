@@ -1,5 +1,4 @@
 const AssetsManifestPlugin = require('./AssetsManifestPlugin');
-const CleanPlugin = require('./CleanPlugin');
 const CompressionPlugin = require('./CompressionPlugin');
 const CopyPlugin = require('./CopyPlugin');
 const CssMinimizerPlugin = require('./CssMinimizerPlugin');
@@ -13,7 +12,6 @@ const TerserPlugin = require('./TerserPlugin');
 
 module.exports = {
   AssetsManifestPlugin,
-  CleanPlugin,
   CompressionPlugin,
   CopyPlugin,
   CssMinimizerPlugin,

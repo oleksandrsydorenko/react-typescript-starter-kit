@@ -3,15 +3,15 @@ const { PATHS } = require('../constants');
 /**
  * Setup JS loaders
  * @param {Object} [props] - Properties
- * @param {boolean} [props.isCached] - Cache enabled flag
- * @param {string} [props.options] - Babel loader options
+ * @param {boolean} [props.isCached] - Cache enable flag
+ * @param {string} [props.options] - Options
  * @return {Object} JS loaders config
  */
-module.exports = ({ isCached, options } = {}) => ({
+module.exports = ({ isCached, options = {} } = {}) => ({
   module: {
     rules: [
       {
-        test: /\.(mjs|[jt]s(x)?)$/,
+        test: /\.ts(x)?$/,
         exclude: /node_modules/,
         use: [
           isCached && {
@@ -21,7 +21,10 @@ module.exports = ({ isCached, options } = {}) => ({
             },
           },
           {
-            options,
+            options: {
+              cacheCompression: false,
+              cacheDirectory: options.cacheDirectory,
+            },
             loader: 'babel-loader',
           },
         ].filter(Boolean),

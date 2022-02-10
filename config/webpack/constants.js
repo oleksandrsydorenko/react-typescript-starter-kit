@@ -1,17 +1,40 @@
-const dotenv = require('dotenv');
+require('dotenv').config();
 
-const PATHS = require('../paths');
+const fs = require('fs');
+const path = require('path');
 
-const ENV = dotenv.config({ path: PATHS.ENV }).parsed;
+const appDirectory = fs.realpathSync(process.cwd());
+const resolvePaths = paths =>
+  Object.entries(paths).reduce(
+    (acc, [key, value]) => ({
+      ...acc,
+      [key]: path.resolve(appDirectory, value),
+    }),
+    {},
+  );
 
 module.exports = {
-  ENV,
-  PATHS,
+  PATHS: {
+    ALIASES: resolvePaths({
+      '@assets': './src/assets',
+      '@components': './src/components',
+      '@pages': './src/pages',
+      '@styles': './src/styles',
+    }),
+    ...resolvePaths({
+      APP: './src',
+      CACHE: './node_modules/.cache/cache-loader',
+      DIST: './dist',
+      ENTRY: './src/index.tsx',
+      HTML: './static/index.html',
+      STATIC: './static',
+    }),
+  },
   ASSET_TEMPLATE: '[name].[contenthash:5][ext]',
   BUNDLE_TEMPLATE: '[name].[contenthash:5]',
-  CHUNK_TEMPLATE: '[name].[chunkhash:5]',
-  DEV_SERVER_HOST: ENV.WEBPACK_DEV_SERVER_HOST || 'localhost',
-  DEV_SERVER_PORT: ENV.WEBPACK_DEV_SERVER_PORT || 3000,
-  DEV_SERVER_PROTOCOL: ENV.WEBPACK_DEV_SERVER_PROTOCOL || 'http',
+  CHUNK_TEMPLATE: '[name].[contenthash:5]',
+  DEV_SERVER_HOST: process.env.WEBPACK_DEV_SERVER_HOST || 'localhost',
+  DEV_SERVER_PORT: process.env.WEBPACK_DEV_SERVER_PORT || 3000,
+  DEV_SERVER_PROTOCOL: process.env.WEBPACK_DEV_SERVER_PROTOCOL || 'http',
   INTEGRITY_HASH_ALGORITHMS: ['sha384'],
 };

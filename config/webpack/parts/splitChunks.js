@@ -1,7 +1,7 @@
 const FILENAME_DELIMITER = '__';
 
 /**
- * Setup split chunks
+ * Setup chunks splitting
  * @return {Object} Split chunks config
  */
 module.exports = () => ({
@@ -18,16 +18,14 @@ module.exports = () => ({
           chunks: 'all',
           // generates chunk only if module shared between minimum 2 chunks
           minChunks: 2,
-          // defines priority for module of preferred cache group
           priority: 1,
-          // enables reusing modules that already split instead of creating new chunk
+          // enables reusing modules that already split in chunk instead of creating the new one
           reuseExistingChunk: true,
         },
         defaultVendors: {
           test: /[\\/]node_modules[\\/]/,
           chunks: 'all',
           priority: 2,
-          // bundles vendors modules in separate chunks
           name: module => {
             const moduleName = module.context.match(
               /[\\/]node_modules[\\/](.*?)([\\/]|$)/,
@@ -39,10 +37,6 @@ module.exports = () => ({
         },
       },
       chunks: 'all',
-      // maximum parallel requests number
-      maxInitialRequests: Infinity,
-      // minimum chunk size
-      minSize: 0,
     },
   },
 });
