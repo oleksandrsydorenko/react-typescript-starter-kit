@@ -1,6 +1,6 @@
 # React-Typescript Starter Kit
 
-[![License MIT badge](https://img.shields.io/badge/License-MIT-red.svg)](/LICENSE) [![Up to date dependencies status badge](https://status.david-dm.org/gh/oleksandrsydorenko/react-typescript-starter-kit.svg)](https://david-dm.org/oleksandrsydorenko/react-typescript-starter-kit) [![Up to date devDependencies status badge](https://status.david-dm.org/gh/oleksandrsydorenko/react-typescript-starter-kit.svg?type=dev)](https://david-dm.org/oleksandrsydorenko/react-typescript-starter-kit?type=dev)
+[![License MIT badge](https://img.shields.io/badge/License-MIT-red.svg)](/LICENSE)
 
 Starter kit for [React](https://reactjs.org/) web applications build on [Webpack 5](https://webpack.js.org/), [Babel](https://babeljs.io/), [TypeScript](https://www.typescriptlang.org/), [Sass](https://sass-lang.com/) stack with configured [ESlint](https://eslint.org/), [Prettier](https://prettier.io/), [Stylelint](https://stylelint.io/), [Lint-Staged](https://github.com/okonet/lint-staged), [Commitlint](https://github.com/conventional-changelog/commitlint), [Husky](https://github.com/typicode/husky) and [Jest](https://jestjs.io/).
 
