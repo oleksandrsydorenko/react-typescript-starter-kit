@@ -9,7 +9,6 @@ module.exports = () => ({
     compress: true,
     historyApiFallback: true,
     host: DEV_SERVER_HOST,
-    hot: true,
     https: DEV_SERVER_PROTOCOL === 'https',
     open: true,
     port: DEV_SERVER_PORT,
