@@ -88,6 +88,7 @@
     "postcss": "^8.4.6",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-loader": "^6.2.1",
+    "postcss-scss": "^4.0.3",
     "prettier": "^2.5.1",
     "rimraf": "^3.0.2",
     "sass": "^1.49.7",

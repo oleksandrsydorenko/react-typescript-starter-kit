@@ -27,9 +27,7 @@ module.exports = () => ({
           chunks: 'all',
           priority: 2,
           name: module => {
-            const moduleName = module.context.match(
-              /[\\/]node_modules[\\/](.*?)([\\/]|$)/,
-            )[1];
+            const moduleName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
 
             // solves .NET servers issue with '@' in module name
             return `vendor${FILENAME_DELIMITER}${moduleName.replace('@', '')}`;

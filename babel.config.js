@@ -15,10 +15,7 @@ module.exports = {
       compact: false,
     },
     production: {
-      plugins: [
-        '@babel/plugin-transform-react-constant-elements',
-        'react-remove-properties',
-      ],
+      plugins: ['@babel/plugin-transform-react-constant-elements', 'react-remove-properties'],
     },
   },
 };

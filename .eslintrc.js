@@ -1,11 +1,12 @@
 const getPresets = isTypeScript =>
   [
-    ...(isTypeScript ? ['airbnb-typescript'] : ['airbnb']),
+    'airbnb',
+    isTypeScript && 'airbnb-typescript',
     'airbnb/hooks',
-    'plugin:promise/recommended',
     'plugin:jest/recommended',
     'plugin:jest/style',
     'plugin:prettier/recommended',
+    'plugin:promise/recommended',
     'prettier',
   ].filter(Boolean);
 
@@ -17,24 +18,25 @@ module.exports = {
     serviceworker: true,
     worker: true,
   },
-  extends: getPresets(),
+  extends: getPresets(false),
   parser: '@babel/eslint-parser',
   rules: {
     'import/no-extraneous-dependencies': [
       'error',
       { devDependencies: ['config/**/*.js', '*.config.js'] },
     ],
-    'react/jsx-filename-extension': ['error', { extensions: ['jsx'] }],
     'prettier/prettier': 'error',
   },
   overrides: [
     {
       extends: getPresets(true),
       files: ['*.ts', '*.tsx'],
+      parser: '@typescript-eslint/parser',
       parserOptions: {
         project: './tsconfig.json',
       },
       rules: {
+        'react/function-component-definition': 'off',
         'react/jsx-filename-extension': ['error', { extensions: ['tsx'] }],
         'prettier/prettier': 'error',
       },

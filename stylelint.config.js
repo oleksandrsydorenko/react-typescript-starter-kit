@@ -4,6 +4,7 @@ const RULE_ORDER_AT_RULE_INCLUDE = {
 };
 
 module.exports = {
+  customSyntax: 'postcss-scss',
   extends: [
     'stylelint-config-standard',
     'stylelint-config-rational-order',

@@ -55,7 +55,4 @@ const getProductionConfig = () =>
   );
 
 module.exports = () =>
-  merge(
-    defaultConfig,
-    (isProduction ? getProductionConfig : getDevelopmentConfig)(),
-  );
+  merge(defaultConfig, (isProduction ? getProductionConfig : getDevelopmentConfig)());

@@ -1,9 +1,4 @@
-const {
-  DEV_SERVER_HOST,
-  DEV_SERVER_PORT,
-  DEV_SERVER_PROTOCOL,
-  PATHS,
-} = require('../constants');
+const { DEV_SERVER_HOST, DEV_SERVER_PORT, DEV_SERVER_PROTOCOL, PATHS } = require('../constants');
 
 /**
  * Setup development server
