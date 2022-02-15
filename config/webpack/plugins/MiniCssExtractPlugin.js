@@ -1,6 +1,6 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const { CHUNK_TEMPLATE } = require('../constants');
+const { CHUNK_FILENAME_TEMPLATE } = require('../constants');
 
 /**
  * Setup MiniCssExtractPlugin
@@ -10,7 +10,7 @@ module.exports = () => ({
   plugins: [
     // extracts CSS to separate files
     new MiniCssExtractPlugin({
-      filename: `styles/${CHUNK_TEMPLATE}.css`,
+      filename: `styles/${CHUNK_FILENAME_TEMPLATE}.css`,
     }),
   ],
 });

@@ -30,7 +30,9 @@ const getDevelopmentConfig = () =>
       },
     }),
     parts.devServer(),
-    parts.general(),
+    parts.general({
+      isSourceMapEnabled: true,
+    }),
     plugins.HtmlPlugin(),
   );
 

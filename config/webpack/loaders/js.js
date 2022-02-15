@@ -21,11 +21,11 @@ module.exports = ({ isCached, options = {} } = {}) => ({
             },
           },
           {
+            loader: 'babel-loader',
             options: {
               cacheCompression: false,
-              cacheDirectory: options.cacheDirectory,
+              cacheDirectory: options.cacheDirectory || false,
             },
-            loader: 'babel-loader',
           },
         ].filter(Boolean),
       },

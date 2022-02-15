@@ -1,4 +1,4 @@
-const { BUNDLE_TEMPLATE, CHUNK_TEMPLATE, PATHS } = require('../constants');
+const { BUNDLE_FILENAME_TEMPLATE, CHUNK_FILENAME_TEMPLATE, PATHS } = require('../constants');
 
 /**
  * Setup general config
@@ -15,18 +15,15 @@ module.exports = ({ isSourceMapEnabled = true, stats = 'normal' } = {}) => ({
   devtool: isSourceMapEnabled && 'source-map',
   mode: process.env.NODE_ENV,
   output: {
-    // path and filename template for chunks
-    chunkFilename: `js/${CHUNK_TEMPLATE}.chunk.js`,
+    chunkFilename: `js/${CHUNK_FILENAME_TEMPLATE}.chunk.js`,
+    clean: true,
     // adds "crossorigin" attribute for script tags
     // required option for webpack-subresource-integrity plugin
     crossOriginLoading: 'anonymous',
-    // path and filename template for bundle
-    filename: `js/${BUNDLE_TEMPLATE}.js`,
-    // path for compiled files
+    filename: `js/${BUNDLE_FILENAME_TEMPLATE}.js`,
     path: PATHS.DIST,
   },
   resolve: {
-    // defines aliases for modules
     alias: PATHS.ALIASES,
     extensions: ['.js', '.ts', '.tsx'],
   },

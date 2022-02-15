@@ -6,7 +6,6 @@ const { DEV_SERVER_HOST, DEV_SERVER_PORT, DEV_SERVER_PROTOCOL, PATHS } = require
  */
 module.exports = () => ({
   devServer: {
-    compress: true,
     historyApiFallback: true,
     host: DEV_SERVER_HOST,
     https: DEV_SERVER_PROTOCOL === 'https',
